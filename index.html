@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - O Futuro do Campo</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background: #0a2e12; /* Fallback verde escuro */
+            overflow-x: hidden;
+        }
+        /* Background Image Container */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('https://lh3.googleusercontent.com/d/1Z_uG0p7U6xI9-y7gS9J9Y9_9g9-9g9-9'); /* Placeholder para a imagem 3D */
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6);
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: -1;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #76ff03;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Player Section */
+        .player-card, .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        .audio-player {
+            width: 100%;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #76ff03;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+        .play-btn:hover {
+            transform: scale(1.1);
+            background: #b2ff59;
+        }
+        .timeline {
+            flex-grow: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+        }
+        .progress {
+            width: 30%; /* Exemplo */
+            height: 100%;
+            background: #76ff03;
+            border-radius: 4px;
+        }
+
+        /* Video Section */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: black;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .theme-box {
+            margin-top: 50px;
+            padding: 20px;
+            border-left: 5px solid #76ff03;
+            background: rgba(0,0,0,0.3);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <header>
+            <h1>Agrinho 2026</h1>
+            <p>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+        </header>
+
+        <section class="player-card">
+            <h3>Ouça a Música do Concurso</h3>
+            <div class="audio-player">
+                <div class="controls">
+                    <button class="play-btn" id="playPause">▶</button>
+                    <div class="timeline" id="timeline">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <span id="time">0:00 / 3:45</span>
+                </div>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 15px; color: #ccc;">
+                Estilo: Hyperpop / Teen Modern
+            </p>
+        </section>
+
+        <section class="video-card">
+            <h3>Apresentação do Projeto</h3>
+            <div class="video-container">
+                <!-- Substitua o ID 'ID_DO_VIDEO' pelo ID real do seu vídeo do YouTube -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <div class="theme-box">
+            <strong>Sobre o Tema:</strong>
+            <p>O equilíbrio entre a força da produção agrícola e a preservação ambiental através da tecnologia e programação.</p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica básica para simulação do player (já que não há arquivo de áudio real carregado no HTML estático)
+        const btn = document.getElementById('playPause');
+        let playing = false;
+
+        btn.addEventListener('click', () => {
+            playing = !playing;
+            btn.innerText = playing ? '⏸' : '▶';
+        });
+    </script>
+</body>
+</html>
